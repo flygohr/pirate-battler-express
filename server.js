@@ -12,7 +12,6 @@ app.get('/fight', async (req, res) => {
             res.status(400)
             res.send({error: "Missing pirates search parameter"})
         }
-        console.log(pirates);
         if(!/\d+,\d+/.test(pirates)) {
             res.status(400)
             res.send({error: "Pirates search parameter incorrectly formatted. Provide two, comma separated objkt ids"})
