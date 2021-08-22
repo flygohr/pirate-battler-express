@@ -108,7 +108,8 @@ function getItemsFromTags(tags) {
     const bootsKey = tags.find(t => t.includes('boots')).replace('boots', '');
     const swordKey = tags.find(t => t.includes('sword')).replace('sword', '');
     const beardKey = tags.find(t => t.includes('beard')).replace('beard', '');
-    const animalKey = tags.find(t => t.includes('animal'))?.replace('animal', '');
+    const foundAnimal = tags.find(t => t.includes('animal'));
+    const animalKey = foundAnimal ? foundAnimal.replace('animal', '') : null;
     return {
         hat: hat[hatKey],
         jacket: jacket[jacketKey],
