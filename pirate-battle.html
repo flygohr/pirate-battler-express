@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pirate Battle</title>
+</head>
+<body>
+<p>
+<label for="pirateIdOne">Pirate One Objkt ID</label>
+<input id="pirateIdOne">
+</p>
+<p>
+<label for="pirateIdTwo">Pirate Two Objkt ID</label>
+<input id="pirateIdTwo">
+</p>
+<p>
+    <button id="fightButton">Fight</button>
+</p>
+<div id="logView"></div>
+<script>
+    const pirateIdOne = document.getElementById('pirateIdOne');
+    const pirateIdTwo = document.getElementById('pirateIdTwo');
+    const fightButton = document.getElementById('fightButton');
+    const logView = document.getElementById('logView');
+    fightButton.onclick = async () => {
+        if(!(pirateIdOne.value && pirateIdTwo.value)) {
+            alert('Please enter the objkt ids for both pirates');
+            return
+        }
+        if(!(/\d+/.test(pirateIdOne.value) && /\d+/.test(pirateIdTwo.value))) {
+            alert('Objkt ids must be numbers');
+            return;
+        }
+        const battleLog = await fetch(`https://pirate-battler-express.orderandchaos.repl.co/fight?pirates=${pirateIdOne.value},${pirateIdTwo.value}`)
+        console.log(battleLog);
+        logView.innerText = battleLog;
+    }
+</script>
+</body>
+</html>
