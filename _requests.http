@@ -1,0 +1,9 @@
+GET http://localhost:3000/fight?pirates=12345,54321
+Accept: application/json
+
+###
+
+GET http://localhost:3000/fight?pirates=50761,198714
+Accept: application/json
+
+###
