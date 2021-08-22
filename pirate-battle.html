@@ -32,19 +32,22 @@
         'Delivers sweeping strike. ',
         'Stabbed them with pointy end.',
     ];
+    const dodgeMessages = [
+        'Deftly side steps the attack.',
+        'Pirouettes away from danger.',
+        'Ducks under the clumsy swipe',
+    ];
+    const knockedOutMessages = [
+        'Curls up in a ball on the floor and sobs.',
+        'Falls face first to the ground.',
+        'Runs away screaming for his mother.',
+    ];
+    const victoryMessages = [
+        'Looks smug',
+        'Does a little jig',
+        'Will never stop gloating about this.'
+    ];
     let interval;
-
-    function handleMissed(logEntry) {
-        return logEntry.message + ' ' + missedMessages[~~(Math.random() * missedMessages.length)];
-    }
-
-    function handleHit(logEntry) {
-        return logEntry.message + ' ' + hitMessages[~~(Math.random() * missedMessages.length)];
-    }
-
-    function dodgeHit(logEntry) {
-        return logEntry.message + ' ' + hitMessages[~~(Math.random() * missedMessages.length)];
-    }
 
     fightButton.onclick = async() => {
         if(interval) clearInterval(interval);
@@ -77,8 +80,23 @@
                 case 'dodge-roll':
                     logView.innerText = handleDodgeRoll(logEntry);
                     break;
+                case 'damage-roll':
+                    logView.innerText = handleDamageRoll(logEntry);
+                    break;
                 case 'missed':
                     logView.innerText = handleMissed(logEntry);
+                    break;
+                case 'hit':
+                    logView.innerText = handleHit(logEntry);
+                    break;
+                case 'dodged':
+                    logView.innerText = handleDodge(logEntry);
+                    break;
+                case 'knocked-out':
+                    logView.innerText = handleKnockOut(logEntry);
+                    break;
+                case 'victory':
+                    logView.innerText = handleVictory(logEntry);
                     break;
                 default:
                     logView.innerText = logEntry.message;
@@ -131,6 +149,31 @@
     function handleDodgeRoll({message, required, roll}) {
         const result = roll >= required ? 'Success' : 'Failure';
         return `${message} Dodge Roll: ${roll} Required: ${required}, ${result}`;
+    }
+
+    function handleDamageRoll({message, modifier, roll}) {
+        const totalDamage = roll + modifier;
+        return `${message} Damage Roll: ${roll}, Modifier: ${modifier}, Total: ${totalDamage}`;
+    }
+
+    function handleMissed(logEntry) {
+        return logEntry.message + ' ' + missedMessages[~~(Math.random() * missedMessages.length)];
+    }
+
+    function handleHit(logEntry) {
+        return logEntry.message + ' ' + hitMessages[~~(Math.random() * hitMessages.length)];
+    }
+
+    function handleDodge(logEntry) {
+        return logEntry.message + ' ' + dodgeMessages[~~(Math.random() * dodgeMessages.length)];
+    }
+
+    function handleKnockOut(logEntry) {
+        return logEntry.message + ' ' + knockedOutMessages[~~(Math.random() * knockedOutMessages.length)];
+    }
+
+    function handleVictory(logEntry) {
+        return logEntry.message + ' ' + victoryMessages[~~(Math.random() * victoryMessages.length)];
     }
 
 </script>
