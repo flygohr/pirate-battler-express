@@ -193,15 +193,17 @@ const battle = (pirateOne, pirateTwo) => {
             const hitRoll = ~~(Math.random() * 100) + 1;
             battleLog.push(log('attack-roll', attacker.name,
                 {roll: hitRoll, required: 100 - attacker.hitChance}));
-            if(hitRoll < 100 - attacker.hitChance) {
+            if(hitRoll <= 100 - attacker.hitChance) {
                 battleLog.push(log('missed', attacker.name));
                 continue;
+            } else {
+                battleLog.push(log('hit', attacker.name));
             }
             const dodgeRoll = ~~(Math.random() * 100) + 1;
             battleLog.push(log('dodge-roll', defender.name,
                 {roll: dodgeRoll, required: 100 - defender.dodgeChance}));
-            if(dodgeRoll > 100 - defender.dodgeChance) {
-                battleLog.push('dodged', defender.name);
+            if(dodgeRoll >= 100 - defender.dodgeChance) {
+                battleLog.push(log('dodged', defender.name));
                 continue;
             }
             const damageRoll = ~~(4 + Math.random() * 12);
