@@ -23,14 +23,27 @@
     const fightButton = document.getElementById('fightButton');
     const logView = document.getElementById('logView');
     const missedMessages = [
-        'Nearly took his own eye out',
-        'Swung aimlessly in the air',
+        'Nearly took his own eye out.',
+        'Swung aimlessly in the air.',
         'Couldn\'t hit a barn door…',
+    ];
+    const hitMessages = [
+        'Somehow managed to land a blow.',
+        'Delivers sweeping strike. ',
+        'Stabbed them with pointy end.',
     ];
     let interval;
 
     function handleMissed(logEntry) {
         return logEntry.message + ' ' + missedMessages[~~(Math.random() * missedMessages.length)];
+    }
+
+    function handleHit(logEntry) {
+        return logEntry.message + ' ' + hitMessages[~~(Math.random() * missedMessages.length)];
+    }
+
+    function dodgeHit(logEntry) {
+        return logEntry.message + ' ' + hitMessages[~~(Math.random() * missedMessages.length)];
     }
 
     fightButton.onclick = async() => {
