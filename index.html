@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Flygohr's TEZOSPIRATES BATTLE SIMULATOR</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="https://www.tezospirates.xyz/css/normalize.css">
+    <link rel="stylesheet" href="https://www.tezospirates.xyz/css/skeleton.css">
+    <link rel="stylesheet" href="https://www.tezospirates.xyz/css//tzpirates.css">
+
+    <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="https://www.tezospirates.xyz/images/tzp-favicon.png">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="one-column">
+                <img src="https://www.tezospirates.xyz/images/tzp-header.png" alt="" class="u-full-width title u-margin-top">
+                <svg viewBox="0 0 151 16" class="title">
+                    <text x="0" y="15">Tezos Pirates</text>
+                </svg>
+                <svg viewBox="0 0 195 16" class="title">
+                    <text x="0" y="15">BATTLE SIMULATOR</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="container card">
+        <div class="row">
+            <div class="one-column">
+                <p>Enter two #TEZOSPIRATES OBJKT IDs to start a battle. You can find yours using CTRL-F in the <a href="http://tezospirates.xyz" target="_blank" rel="noopener noreferrer">gallery</a>. The battle log and result will be displayed below. Please allow for a few seconds after clicking 'fight' for the data to load.</p>
+                <label for="pirateIdOne">TEZOS PIRATE #1 ID</label>
+                <input id="pirateIdOne" value="50761" class="u-full-width">
+                <label for="pirateIdTwo">TEZOS PIRATE #2 ID</label>
+                <input id="pirateIdTwo" value="198714" class="u-full-width">
+            </div>
+        </div>
+    </div>
+
+    <div class="container cards buttons">
+        <div class="row">
+            <div class="one-column">
+                <button id="fightButton" class="u-full-width">Fight</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container u-battler-pics">
+        <div class="row">
+            <div class="six columns"><img src="https://via.placeholder.com/500" alt="" class="u-max-full-width u-battler-pic" style="border: 0"></div>
+            <div class="six columns"><img src="https://via.placeholder.com/500" alt="" class="u-max-full-width u-battler-pic" style="border: 0"></div>
+            <img src="https://via.placeholder.com/200" alt="" class="u-battler-vs">
+        </div>
+    </div>
+
+    <div class="container card">
+        <div class="row">
+            <div class="one-column">
+                <h3>Battle log</h3>
+                <div id="logView">Awaiting battle start..</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container card">
+        <div class="row">
+            <div class="one-column">
+                <p>This battle simulator has been made just for the fun of it, for now. A tournament with prizes will follow as soon as I manage to put it together.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container card">
+        <div class="row">
+            <div class="one-column">
+                <p>This battle simulator was made possible thanks to all the help I got from the amazing <a href="https://twitter.com/__orderandchaos" target="_blank" rel="noopener noreferrer">@orderandchaos</a>, creator of the <a href="https://dronesquadron.xyz/" target="_blank" rel="noopener noreferrer">Drone Squadrons</a> and <a href="https://orderandchaos.xyz/" target="_blank" rel="noopener noreferrer">top generative artist on Tezos</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container cards buttons">
+        <div class="row">
+            <div class="one-column">
+                <a href="https://tezospirates.xyz" target="_blank" rel="noopener noreferrer" class="u-full-width button">Tezospirates</a>
+                <a href="https://flygohr.com/nfts" target="_blank" rel="noopener noreferrer" class="u-full-width button">Flygohr NFTs</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
